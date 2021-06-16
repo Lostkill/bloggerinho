@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { store } from '../../config/store'
 
-function serviceApi (tokenKey) {
+function serviceApi () {
   const api = axios.create({
-    baseURL: 'http://ec2-54-232-158-24.sa-east-1.compute.amazonaws.com:8080'
+    baseURL: process.env.REACT_APP_URL_API
   })
 
   api.interceptors.request.use(function (config) {
